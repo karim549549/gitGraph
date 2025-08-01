@@ -11,8 +11,7 @@ import { Link as LinkIcon, GitGraph, Eye } from 'lucide-react';
 
 import HowItWorksCard from '../components/HowItWorksCard';
 
-import { InputButton, InputButtonProvider, InputButtonAction, InputButtonSubmit, InputButtonInput } from '../components/animate-ui/buttons/input';
-
+import RepoInputSection from '../components/RepoInputSection';
 import Navbar from '../components/Navbar';
 
 const HomePage = () => {
@@ -33,13 +32,7 @@ const HomePage = () => {
         <p className="max-w-2xl text-sm sm:text-md md:text-lg text-neutral-600 dark:text-neutral-400 mb-12">
           GitGraph transforms complex Git repositories into beautiful, interactive graphs. Understand branch structures, commit history, and the flow of your projects at a glance. Perfect for developers, teams, and students.
         </p>
-        <InputButtonProvider className="h-12 md:h-16 w-full max-w-sm md:max-w-xl">
-          <InputButton>
-            <InputButtonInput placeholder="Enter a repository URL" className="text-sm sm:text-base" />
-            <InputButtonAction className="text-sm sm:text-base">Enter a repository URL</InputButtonAction>
-            <InputButtonSubmit className="text-sm sm:text-base">Visualize</InputButtonSubmit>
-          </InputButton>
-        </InputButtonProvider>
+        <RepoInputSection />
         <div className="w-full max-w-6xl mt-24">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">

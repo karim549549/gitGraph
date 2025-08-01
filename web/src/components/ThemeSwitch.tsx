@@ -4,9 +4,17 @@ import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { useState, useEffect } from 'react';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; // Render nothing on the server
 
   return (
     <TooltipProvider>
